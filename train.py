@@ -159,9 +159,7 @@ if __name__ == "__main__":
                 last_action = action
                 if same_action < -10 :
                     same_action = -10 
-                
-            print('same action counter : ', same_action, '/', same_act_limit) 
-            
+             
             next_state, reward, done = env.step(action)
             
             next_state = np.reshape(next_state, (1,state_size,1))
@@ -180,7 +178,8 @@ if __name__ == "__main__":
                 agent.replay(batch_size)
             
             end_time = str(datetime.datetime.now().time())
-            watch_result(e+1 , start_time, end_time, env.train_index, end_index-start_index, env.get_action(action), reward ,env.profit)      
+            watch_result(e+1 , start_time, end_time, env.train_index, end_index-start_index, env.get_action(action), reward ,env.profit) 
+            print('same action counter : ', same_action, '/', same_act_limit) 
         agent.save("agent_model.h5")
         
     #agent.save("agent_model.h5")
