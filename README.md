@@ -10,6 +10,10 @@ To train this agent, run "train.py".
 
 During training, it will print current reward, action of every train-step.
 
+  Only, In training 
+  
+    If the agent answers many same actions, the output will random new action !!!. 
+  
 Afterthat it will save weights at "agent_model.h5"
 
 
