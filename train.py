@@ -131,6 +131,7 @@ if __name__ == "__main__":
     
     num_index = all_index - state_size
     env = TrainEnvironment(X_train, num_index)
+    
     batch_size = 20
     best_reward = -300
      
