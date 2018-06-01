@@ -35,13 +35,9 @@ class DQNAgent:
         model = Sequential()
         
         model.add(LSTM(30, return_sequences = True, input_shape = (self.state_size,1), activation='relu'))
-        model.add(LSTM(6, return_sequences = True,  activation='relu'))
-        model.add(LSTM(3, return_sequences = True,  activation='relu'))
-        
-        model.add(Dense(30, activation='relu'))
-        model.add(Dense(6, activation='relu'))
-        
-        model.add(Dense(self.action_size, activation='relu'))
+        model.add(LSTM(18, return_sequences = True,  activation='relu'))
+        model.add(LSTM(6, activation='relu'))         
+        model.add(Dense(self.action_size, activation='sigmoid'))
         model.compile(loss='mean_squared_error', optimizer=Adam(lr=self.learning_rate))
         return model
 
