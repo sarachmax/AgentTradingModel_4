@@ -127,7 +127,7 @@ def watch_result(episode ,s_time, e_time, c_index, all_index, action, reward, pr
 if __name__ == "__main__":
     
     agent = DQNAgent(state_size)
-    agent.load("agent_model.h5")
+    #agent.load("agent_model.h5")
     
     num_index = all_index - state_size
     env = TrainEnvironment(X_train, num_index)

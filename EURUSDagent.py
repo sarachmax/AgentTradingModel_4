@@ -36,9 +36,9 @@ class DQNAgent:
         
         model.add(LSTM(30, return_sequences = True, input_shape = (self.state_size,1), activation='relu'))
         model.add(LSTM(6, return_sequences = True,  activation='relu'))
-        model.add(LSTM(3,return_sequences = True,  activation='relu'))
+        model.add(LSTM(3, return_sequences = True,  activation='relu'))
         
-        model.add(Dense(30, return_sequences = True, activation='relu'))
+        model.add(Dense(30, activation='relu'))
         model.add(Dense(6, activation='relu'))
         
         model.add(Dense(self.action_size, activation='relu'))
@@ -55,6 +55,7 @@ class DQNAgent:
     def act(self, state, train = True, random_action = False):
         if train : 
             if np.random.rand() <= self.epsilon or random_action :
+                print('random action')
                 return random.randrange(self.action_size)
         act_values = self.model.predict(state)
         print('act : ', act_values)
