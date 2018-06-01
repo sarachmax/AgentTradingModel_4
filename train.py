@@ -132,7 +132,7 @@ if __name__ == "__main__":
     num_index = all_index - state_size
     env = TrainEnvironment(X_train, num_index)
     
-    batch_size = 10
+    batch_size = 15 # Train Every 3 weeks data 
     best_reward = -300
      
     same_act_limit = 10 
